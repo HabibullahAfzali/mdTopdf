@@ -15,7 +15,7 @@ jobs:
 
       - name: Install Pandoc
         run: |
-          choco install pandoc -y
+          choco install pandoc -y  # Use Chocolatey package manager for Pandoc installation on Windows
 
       - name: Convert Markdown to PDF
         run: pandoc -o output.pdf practice-exam-1.md
