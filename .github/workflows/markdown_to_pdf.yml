@@ -7,14 +7,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Install Pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+        run: |
+          choco install pandoc -y
 
       - name: Convert Markdown to PDF
         run: pandoc -o output.pdf practice-exam-1.md
