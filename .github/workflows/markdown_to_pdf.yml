@@ -1,5 +1,4 @@
-- name: Convert Markdown to PDF
-  run: pandoc -o output.pdf practice-exam-1.md
+name: Convert Markdown to PDF
 
 on:
   push:
@@ -11,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install Pandoc
-      run: sudo apt-get update && sudo apt-get install -y pandoc
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
 
-    - name: Convert Markdown to PDF
-      run: pandoc -o output.pdf practice-exam-1.md
+      - name: Convert Markdown to PDF
+        run: pandoc -o output.pdf practice-exam-1.md
