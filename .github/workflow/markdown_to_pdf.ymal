@@ -1,4 +1,5 @@
-name: Convert Markdown to PDF
+- name: Convert Markdown to PDF
+  run: pandoc -o output.pdf practice-exam-1.md
 
 on:
   push:
