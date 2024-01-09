@@ -1,0 +1,21 @@
+- name: Convert Markdown to PDF
+  run: pandoc -o output.pdf practice-exam-1.md
+
+on:
+  push:
+    branches:
+      - main # Change this to the branch you want to trigger the action
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Pandoc
+      run: sudo apt-get update && sudo apt-get install -y pandoc
+
+    - name: Convert Markdown to PDF
+      run: pandoc -o output.pdf practice-exam-1.md
